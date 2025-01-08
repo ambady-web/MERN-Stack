@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Dashboard</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #f0f8ff;
+            --accent-color: #FF5722;
+            --text-color: #2c3e50;
+            --header-height: 70px;
+            --sidebar-width: 260px;
+            --border-radius: 16px;
+            --transition-speed: 0.3s;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+            color: var(--text-color);
+            display: flex;
+            height: 100vh;
+        }
+
+        .header {
+            height: var(--header-height);
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: var(--box-shadow);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .header .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .header .search-bar {
+            flex: 1;
+            margin: 0 20px;
+        }
+
+        .header input[type="search"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: var(--border-radius);
+            outline: none;
+            font-size: 1rem;
+            color: var(--text-color);
+            background-color: #ffffff;
+            box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .profile-menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: fixed;
+            top: var(--header-height);
+            bottom: 0;
+            border-top-right-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 12px;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background var(--transition-speed), transform var(--transition-speed);
+        }
+
+        .sidebar a:hover {
+            background: var(--accent-color);
+            transform: translateX(10px);
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            margin-top: var(--header-height);
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .task-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .task-card {
+            background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .task-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .task-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .task-card p {
+            margin: 0 0 15px;
+            color: #6c757d;
+        }
+
+        .task-card .icons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .task-card .icons span {
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.9rem;
+            transition: background-color var(--transition-speed);
+        }
+
+        .task-card .icons span:hover {
+            background-color: var(--accent-color);
+        }
+
+        .editable {
+            padding: 5px;
+            border: 1px dashed transparent;
+            border-radius: var(--border-radius);
+            transition: border-color var(--transition-speed);
+        }
+
+        .editable:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            background-color: #e8f5e9;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="https://static-00.iconduck.com/assets.00/todo-list-icon-512x477-nd68trtq.png" alt="Logo">
+            TaskManager
+        </div>
+        <div class="search-bar">
+            <input type="search" placeholder="Search tasks...">
+        </div>
+        <div class="profile-menu">
+            <span>AMBADY BABU</span>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <a href="#">Dashboard</a>
+        <a href="#">My Tasks</a>
+        <a href="#">Completed</a>
+        <a href="#">Settings</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div class="task-grid">
+            <div class="task-card">
+                <h3 contenteditable="true" class="editable">Complete Project Proposal</h3>
+                <p contenteditable="true" class="editable">Prepare the project proposal document and submit it to the client for review by next week.</p>
+                <div class="icons">
+                    <span>Edit</span>
+                    <span>Delete</span>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <h3 contenteditable="true" class="editable">Team Meeting</h3>
+                <p contenteditable="true" class="editable">Schedule and conduct the weekly team meeting to discuss project updates and milestones.</p>
+                <div class="icons">
+                    <span>Edit</span>
+                    <span>Delete</span>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <h3 contenteditable="true" class="editable">Code Review</h3>
+                <p contenteditable="true" class="editable">Review the code submitted by the development team and provide feedback or approval.</p>
+                <div class="icons">
+                    <span>Edit</span>
+                    <span>Delete</span>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <h3 contenteditable="true" class="editable">Prepare Presentation</h3>
+                <p contenteditable="true" class="editable">Create the presentation slides for the upcoming client meeting.</p>
+                <div class="icons">
+                    <span>Edit</span>
+                    <span>Delete</span>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <h3 contenteditable="true" class="editable">Update Website</h3>
+                <p contenteditable="true" class="editable">Update the company website with the latest news and upcoming events.</p>
+                <div class="icons">
+                    <span>Edit</span>
+                    <span>Delete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

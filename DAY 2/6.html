@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Pricing Table</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <h1>Our Pricing Plans</h1>
+        <div class="toggle-switch">
+            <span>Monthly</span>
+            <label class="switch">
+                <input type="checkbox" id="pricing-toggle">
+                <span class="slider"></span>
+            </label>
+            <span>Yearly <span class="discount">Save 20%</span></span>
+        </div>
+
+        <div class="pricing-table">
+            <!-- Basic Plan -->
+            <div class="pricing-card">
+                <h3>Basic</h3>
+                <p class="price" data-monthly="$19" data-yearly="$15">$19</p>
+                <ul>
+                    <li>✅ 10 Projects</li>
+                    <li>✅ 5 GB Storage</li>
+                    <li class="tooltip">✅ Email Support 
+                        <span class="tooltip-text">Support via Email, 24/7</span>
+                    </li>
+                </ul>
+                <button>Select Plan</button>
+            </div>
+
+            <!-- Pro Plan (Highlighted) -->
+            <div class="pricing-card recommended">
+                <h3>Pro</h3>
+                <p class="price" data-monthly="$49" data-yearly="$39">$49</p>
+                <ul>
+                    <li>✅ Unlimited Projects</li>
+                    <li>✅ 100 GB Storage</li>
+                    <li class="tooltip">✅ Priority Support 
+                        <span class="tooltip-text">Faster response times</span>
+                    </li>
+                </ul>
+                <button>Select Plan</button>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="pricing-card">
+                <h3>Premium</h3>
+                <p class="price" data-monthly="$99" data-yearly="$79">$99</p>
+                <ul>
+                    <li>✅ Enterprise Projects</li>
+                    <li>✅ 1 TB Storage</li>
+                    <li class="tooltip">✅ Dedicated Support 
+                        <span class="tooltip-text">Dedicated account manager</span>
+                    </li>
+                </ul>
+                <button>Select Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 SaaS Company. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

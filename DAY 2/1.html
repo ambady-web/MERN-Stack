@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML with Inline, Internal, and External CSS</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .internal-class {
+            color: blue;
+            text-align: center;
+        }
+
+        #internal-id {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header style="background-color: lightgray; text-align: center; padding: 10px;">
+        <h1>Welcome to My Website</h1>
+        <p style="font-style: italic;">This is styled with inline CSS</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="internal-class">
+            <h2>About Us</h2>
+            <p>This section is styled using internal CSS.</p>
+        </section>
+
+        <section id="internal-id">
+            <h2>Our Services</h2>
+            <p>This section uses an ID selector styled with internal CSS.</p>
+        </section>
+
+        <section class="external-class">
+            <h2>Contact Us</h2>
+            <p>This section is styled using external CSS.</p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 My Website. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

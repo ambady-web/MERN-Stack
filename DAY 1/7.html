@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Categories</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #111;
+        }
+
+        nav ul ul {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+        nav li:hover > ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Product Categories</h1>
+
+    <nav>
+        <ul>
+            <li><a href="#">ELECTRONICS</a>
+                <ul>
+                    <li><a href="#">Mobile Phones</a></li>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Cameras</a></li>
+                </ul>
+            </li>
+            <li><a href="#">FURNITURE</a>
+                <ul>
+                    <li><a href="#">Sofas</a></li>
+                    <li><a href="#">Beds</a></li>
+                    <li><a href="#">Dining Tables</a></li>
+                </ul>
+            </li>
+            <li><a href="#">CLOTHING</a>
+                <ul>
+                    <li><a href="#">Men's Wear</a></li>
+                    <li><a href="#">Women's Wear</a></li>
+                    <li><a href="#">Kids' Wear</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+</html>

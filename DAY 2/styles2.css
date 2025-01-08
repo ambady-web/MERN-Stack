@@ -1,0 +1,243 @@
+/* 🌟 General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 🌟 Typography */
+h1 {
+    font-size: 2.5rem;
+    margin-top: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* 🌟 Toggle Switch */
+.toggle-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    gap: 10px;
+    font-size: 1rem;
+    color: #f5f5f5;
+}
+
+.discount {
+    color: #ff9800;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: white;
+    top: 3px;
+    left: 4px;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background: #4caf50;
+}
+
+input:checked + .slider::before {
+    transform: translateX(28px);
+}
+
+/* 🌟 Pricing Table */
+.pricing-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s, box-shadow 0.3s;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-card.recommended {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    color: #fff;
+    border: none;
+    position: relative;
+}
+
+.pricing-card.recommended::after {
+    content: 'Recommended';
+    position: absolute;
+    top: 15px;
+    right: -40px;
+    background: #ff9800;
+    color: #fff;
+    padding: 5px 30px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transform: rotate(45deg);
+}
+
+.pricing-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.pricing-card .price {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #ffc107;
+}
+
+.pricing-card.recommended .price {
+    color: #fff;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.pricing-card ul li {
+    margin: 10px 0;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-card ul li::before {
+    content: '✅';
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+}
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.pricing-card button {
+    margin-top: 20px;
+    background: linear-gradient(90deg, #ff9800, #ff5722);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.pricing-card button:hover {
+    background: linear-gradient(90deg, #ff5722, #d84315);
+    transform: scale(1.05);
+}
+
+/* 🌟 Footer */
+footer {
+    margin-top: 50px;
+    padding: 15px 0;
+    background: #0e1d34;
+    color: #f5f5f5;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 768px) {
+    .pricing-table {
+        grid-template-columns: 1fr;
+    }
+
+    .toggle-switch {
+        flex-direction: column;
+    }
+}

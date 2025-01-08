@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML Page</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 40px;
+            line-height: 1.8;
+            font-size: 18px;
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px 20px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        header img {
+            height: 50px;
+            margin-right: 20px;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-right {
+            display: flex;
+            gap: 10px;
+        }
+        .header-right button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .header-right button:hover {
+            background-color: #0056b3;
+        }
+        .search-bar {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        nav {
+            margin-top: 20px;
+            background-color: #333;
+            padding: 10px 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #FF6347;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        a {
+            color: #FF4500;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #FF6347;
+        }
+        main {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .advertisement {
+            background: rgba(0, 0, 0, 0.05);
+            border: 2px dashed #ccc;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .ad-item {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            width: 30%;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .ad-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .ad-item h3 {
+            font-size: 18px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .ad-item p {
+            font-size: 14px;
+            color: #666;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5" alt="Shopping Cart Image">
+            <span><strong>SHOPPY</strong></span>
+        </div>
+        <div class="header-right">
+            <input type="text" class="search-bar" placeholder="Search...">
+            <button>Login</button>
+            <button>Signup</button>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Product</a>
+        <a href="#">Shopping</a>
+        <a href="#">Product Category</a>
+        <a href="#">Payment</a>
+    </nav>
+
+    <main>
+        <section>
+            <h1>Welcome to <strong>Shoppy!</strong></h1>
+            <p>Shop the latest trends <span style="font-style: italic;">right now!</span> Discover unique products that fit your <mark>style</mark>.</p>
+        </section>
+
+        <section>
+            <h2>Exclusive Offers</h2>
+            <div>
+                <p>Don't miss out on our exclusive offers. <a href="#"><em>Check them out!</em></a></p>
+                <p><b>Hurry!</b> Limited time only!</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>New Arrivals</h3>
+            <div>
+                <p>Explore our new arrivals and find something that you absolutely <strong>adore!</strong></p>
+                <p>Price <sup>$</sup><small>99.99</small></p>
+            </div>
+        </section>
+
+        <section>
+            <h4>Customer Favorites</h4>
+            <p><span style="text-decoration: underline;"><big>See</big></span> what our customers love most: Our bestselling items are a must-try!</p>
+            <p><del>Out of Stock</del> <mark>Back in stock soon!</mark></p>
+        </section>
+
+        <section>
+            <h5>Join Our <em>Community</em></h5>
+            <p>Become a part of our community. <span style="color: blue;"><strong>Follow</strong></span> us on social media for more updates.</p>
+        </section>
+
+        <section>
+            <h6>Contact Us</h6>
+            <p>If you have any questions, feel free to <a href="#"><b>reach out</b></a> to our support team!</p>
+            <p><sub>Support Hours: 9AM - 5PM</sub></p>
+        </section>
+    </main>
+
+    <div class="advertisement">
+        <!-- Ad for Beard Trimmer -->
+        <div class="ad-item">
+            <img src="https://via.placeholder.com/400x300.png?text=Beard+Trimmer" alt="Beard Trimmer Image">
+            <h3><b>Professional Beard Trimmer</b></h3>
+            <p><small>Get the best grooming experience</small> with our advanced beard trimmer. Perfect for all your styling <sup>needs</sup>.</p>
+        </div>
+        <!-- Ad for CCTV Camera -->
+        <div class="ad-item">
+            <img src="https://via.placeholder.com/400x300.png?text=CCTV+Camera" alt="CCTV Camera Image">
+            <h3><strong>High-Quality CCTV Camera</strong></h3>
+            <p><del>Old Model</del> <mark>New Model Available Now</mark>! Ensure safety and security with our state-of-the-art CCTV camera system. Stay protected 24/7.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Simple HTML Page. All rights <small>reserved</small>.</p>
+    </footer>
+</body>
+</html>

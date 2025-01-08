@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Product Grid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">🛍️ <strong>E-Shop</strong></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li>Home</li>
+                    <li>Products</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+            </div>
+            <div class="cart-icon">🛒</div>
+        </div>
+    </header>
+
+    <!-- Sticky Filter Bar -->
+    <div class="filter-bar">
+        <div class="container">
+            <h3>🎯 Filters</h3>
+            <select>
+                <option>All Categories</option>
+                <option>Electronics</option>
+                <option>Clothing</option>
+                <option>Books</option>
+            </select>
+            <input type="range" min="0" max="1000" class="price-range">
+            <button>Apply Filters</button>
+        </div>
+    </div>
+
+    <!-- Product Grid Section -->
+    <main class="container product-grid">
+        <!-- Sample Product Cards -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://media.istockphoto.com/id/1372906882/photo/modern-blue-wireless-headphones-isolated-on-white-background-with-clipping-path.jpg?s=612x612&w=0&k=20&c=0k-2JFElEQ0QTvXsgtLx3i2JotQo_Eb8aEwyN-BOZjA=" alt="Product 1">
+                <div class="product-overlay">
+                    <p>⭐ 4.5 | 20% Off</p>
+                </div>
+            </div>
+            <h4>Wireless Headphones</h4>
+            <p>$99.99</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTyWaPCi5KYOTYxqyEiaRKvs_EWCiMM3OibKCKyYqgSDWpzKQ-Hm4k6QrtBgt-juxX6kwztJ3Lrw9RsW2xWbpzv0vp3APm7iCSUteVT3Un8DFhh-EuwGHrD&usqp=CAE" alt="Product 2">
+                <div class="product-overlay">
+                    <p>⭐ 4.8 | 10% Off</p>
+                </div>
+            </div>
+            <h4>Smart Watch</h4>
+            <p>$149.99</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.jdmagicbox.com/quickquotes/images_main/jbl-speakers-31-01-2023-52-272345028-f2hwvuhq.png" alt="Product 3">
+                <div class="product-overlay">
+                    <p>⭐ 4.7 | 15% Off</p>
+                </div>
+            </div>
+            <h4>Bluetooth Speaker</h4>
+            <p>$79.99</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://assets2.razerzone.com/images/pnx.assets/c174e90e94ab3f247fa562eaecc282b4/500x500-razer-naga-left-handed.webp" alt="Product 4">
+                <div class="product-overlay">
+                    <p>⭐ 4.2 | 5% Off</p>
+                </div>
+            </div>
+            <h4>Gaming Mouse</h4>
+            <p>$59.99</p>
+            <button>Add to Cart</button>
+        </div>
+    </main>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button>Previous</button>
+        <button>1</button>
+        <button>2</button>
+        <button>Next</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container footer-content">
+            <ul>
+                <li>📞 Contact Us</li>
+                <li>🔒 Privacy Policy</li>
+                <li>📜 Terms of Service</li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
