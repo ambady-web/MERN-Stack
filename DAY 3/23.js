@@ -1,0 +1,1 @@
+//write a js program to find factorial of a number using recursive function

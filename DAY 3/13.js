@@ -1,0 +1,1 @@
+//write a js program to convert given character into upppercase to lowercase & vice versa without using builtin function

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Circle with Switch</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Circle Styling */
+        #circle {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.4s ease, transform 0.4s ease;
+        }
+
+        /* Switch Styling */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 34px;
+            transition: background-color 0.4s ease;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .slider::before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.4s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        input:checked + .slider {
+            background-color: #4caf50;
+        }
+
+        input:checked + .slider::before {
+            transform: translateX(26px);
+        }
+
+        /* Circle Animation on Switch */
+        input:checked ~ #circle {
+            background-color: yellow;
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 255, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Circle Switch</h1>
+        <div id="circle"></div>
+        <label class="switch">
+            <input type="checkbox" id="toggleSwitch">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <script>
+        const circle = document.getElementById("circle");
+        const toggleSwitch = document.getElementById("toggleSwitch");
+
+        toggleSwitch.addEventListener("change", () => {
+            if (toggleSwitch.checked) {
+                circle.style.backgroundColor = "yellow";
+                circle.style.transform = "scale(1.1)";
+            } else {
+                circle.style.backgroundColor = "black";
+                circle.style.transform = "scale(1)";
+            }
+        });
+    </script>
+</body>
+</html>

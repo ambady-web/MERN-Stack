@@ -1,0 +1,1 @@
+//write a js program to check whether a given number is armstrong or not

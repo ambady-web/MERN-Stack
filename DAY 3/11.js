@@ -1,0 +1,1 @@
+//write a js program to find first ten prime numbers

@@ -1,0 +1,129 @@
+//video player 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://cdn.pixabay.com/photo/2016/12/27/20/45/space-1931076_1280.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Video Player Styles */
+        video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 15px;
+            padding: 10px 0;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Space-Themed Video Player</div>
+        <video id="video">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="controls">
+            <button id="rewind">⏪ Rewind 5s</button>
+            <button id="playPause">▶️ Play</button>
+            <button id="forward">⏩ Forward 5s</button>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById("video");
+        const playPauseButton = document.getElementById("playPause");
+        const rewindButton = document.getElementById("rewind");
+        const forwardButton = document.getElementById("forward");
+
+        // Play or Pause the video
+        playPauseButton.addEventListener("click", () => {
+            if (video.paused) {
+                video.play();
+                playPauseButton.textContent = "⏸ Pause";
+            } else {
+                video.pause();
+                playPauseButton.textContent = "▶️ Play";
+            }
+        });
+
+        // Rewind the video by 5 seconds
+        rewindButton.addEventListener("click", () => {
+            video.currentTime -= 5;
+        });
+
+        // Forward the video by 5 seconds
+        forwardButton.addEventListener("click", () => {
+            video.currentTime += 5;
+        });
+    </script>
+</body>
+</html>
